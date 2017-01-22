@@ -4,19 +4,20 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/lib/pq/oid"
+	_ "pq-master/oid"
 )
 
 func main() {
-	bd, err := sql.Open("pq", "user='postgres' dbname='DBase' password='pass' host='127.0.0.1' port='5432'")
+	//bd, err := sql.Open("pq", "user='postgres' dbname='DBase' password='pass' host='127.0.0.1' port='5432'")
+	bd, err := sql.Open("pq", "postgres:pass@tcp(localhost:5432)/DBase")
 	defer bd.Close()
-	if err != nil {
+	if err!= nil {
 		fmt.Println("error de acceso")
 	} else {
 		fmt.Println("Acceso satisfactorio")
 	}
 	//  fmt.Printf("Primer error: ", err)
-
+/*
 	err2 := bd.Ping()
 	if err2 != nil {
 		fmt.Println("error ping")
