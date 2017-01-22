@@ -4,43 +4,41 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "pq-master/oid"
+	_ "github.com/lib/pq"
 )
 
 func main() {
-	//bd, err := sql.Open("pq", "user='postgres' dbname='DBase' password='pass' host='127.0.0.1' port='5432'")
-	bd, err := sql.Open("postgres", "user=postgres password=pass host=127.0.0.1 port=5432 dbname=DBase sslmode=disable")
-	defer bd.Close()
+	//conection DB
+	db, err := sql.Open("postgres", "user=postgres password=pass host=127.0.0.1 port=5432 dbname=DBase sslmode=disable")
+	defer db.Close()
+
 	if err!= nil {
-		fmt.Println("error de acceso")
+		fmt.Println("Error de acceso")
 	} else {
 		fmt.Println("Acceso satisfactorio")
 	}
-	//  fmt.Printf("Primer error: ", err)
-/*
-	err2 := bd.Ping()
+	
+//Test conection
+	err2 := db.Ping()
 	if err2 != nil {
-		fmt.Println("error ping")
+		fmt.Println("Error en prueba de conexión")
 	} else {
-		fmt.Println("Acceso ping")
+		fmt.Println("Prueba de conexión exitoso ")
 	}
-	//fmt.Printf("Segundo error:", err)
-
-	/*
-	   tabla, err2 := bd.Query("SELEC * FROM public.users")
+	
+	   tabla, err2 := db.Query("SELECT * FROM users")
 	   if err2 !=nil {
-	   	fmt.Printf("error en consulta de tabla\n")
-	   }
+	   	fmt.Println("Error en consulta a tabla")
+	   }else {
+		   for tabla.Next() {//Recorrido de la tabla
+	   			var name, password string
 
-	   for tabla.Next() {
-	   	var name, password string
+	   			error3:=tabla.Scan(&name,&password)
+	   			if error3!=nil { fmt.Println("error recorriendo la tabla")
+	  				 	} else{fmt.Println(name + " " + password)} 	
+	   		}//fin del recorrido por la tabla
+	   }//end else
 
-	   	error3:=tabla.Scan(&name,&password)
-	   	if error3!=nil {
-	   		fmt.Printf("error recorriendo la tabla\n")
-	   	}
-	   	fmt.Println(name + " " + password)
-	   }
-	*/
-	//bd.Close()
-}
+	   
+	
+}//end func main
