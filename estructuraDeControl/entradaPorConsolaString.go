@@ -17,7 +17,7 @@ func main() {//Inicio de la función main (bloque de código principal)
 		 // asigno memoria para una variable de tipo scanner
 		 scanner := bufio.NewScanner(os.Stdin)
 
-     fmt.Print("Ingresa un texto")//mensaje a mostrar al usuario
+     fmt.Print("Ingresa un texto: ")//mensaje a mostrar al usuario
 
 		 scanner.Scan()//leo la entrada por consola
 
@@ -25,6 +25,12 @@ func main() {//Inicio de la función main (bloque de código principal)
 		 texto   := scanner.Text()
 
 		 //Muestro por consola el string ingresado previamente por el usuario
-     fmt.Println("El texto ingresado :", texto)
+     fmt.Println("El texto ingresado: ", texto)
 
 }//fin de la función main
+
+/*
+Ingresa un texto: textoIngresado
+El texto ingresado :textoIngresado
+
+*/

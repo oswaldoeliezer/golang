@@ -23,7 +23,7 @@ func main() { //Inicio de la función main (bloque de código principal)
 
 	var esferaSacada = "Amarilla"
 
-	//Con un If anidado resolvemos esto
+	//Con un If anidado resolvemos ésto
 	if esferaSacada == esfera1 {
 		fmt.Println("La esfera es " + esfera1)
 	} else if esferaSacada == esfera2 {

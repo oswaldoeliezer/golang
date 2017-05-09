@@ -25,10 +25,16 @@ func main() {//Inicio de la función main (bloque de código principal)
       }//fin de la función main
 
 
-      //Descripción de los parametros:
-      // func nombreFuncion (var_recibida1 tipo_var_recibida1,
-      //              var_recibida2 tipo_var_recibida2) tipo_dato_devuelto
-      //              {bloque_de_codigo_a_ejecutar}
+
+      /*Descripción de los parametros:
+       func nombreFuncion (var_recibida1 tipo_var_recibida1,
+                    var_recibida2 tipo_var_recibida2) tipo_dato_devuelto{
+
+                    bloque_de_codigo_a_ejecutar
+                    return (valor a devolver)
+                  }
+      */
+             
       func suma(a int,b int) int {//Inicio función suma
                return (a+b)
              }//fin función suma

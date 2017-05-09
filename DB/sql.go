@@ -1,12 +1,13 @@
 package main
 
+// Se importan las librerias requeridas
 import (
 	"database/sql"
 	"fmt"
-
 	_ "pq-master"
 )
 
+//// Declaración en bloque de identificadores de tipo constantes
 const (
 	host     = "localhost"
 	port     = 5432
@@ -19,6 +20,7 @@ func main() {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
+
 	fmt.Printf("psqlInfo", psqlInfo)
 	db, err := sql.Open("postgres", psqlInfo)
 
