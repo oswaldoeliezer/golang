@@ -11,14 +11,11 @@ func main() {
 	//conection DB
 	db, err := sql.Open("postgres", "user=postgres password=pass host=127.0.0.1
 											port=5432 dbname=DBase sslmode=disable")
-	defer db.Close()
-
-	if err!= nil {
-		fmt.Println("Error de acceso")
-	} else {
-		fmt.Println("Acceso satisfactorio")
+		if err!= nil {
+		fmt.Println("sql.Open() error :  %v\n" , err)
+		return
 	}
-
+defer db.Close()//Cieera la BD justo antes de concluir la ejecución
 //Test conection
 	err2 := db.Ping()
 	if err2 != nil {

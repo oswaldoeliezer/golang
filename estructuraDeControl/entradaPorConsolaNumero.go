@@ -19,22 +19,17 @@ func main() {//Inicio de la función main (bloque de código principal)
         fmt.Scanln(&a)
         fmt.Println("Introduce otro numero")
         fmt.Scanln(&b)
+        fmt.S
 
         //imprime mensaje con formato personalizado
         fmt.Printf("La suma de %d + %d = %d \n", a, b, suma(a,b))
       }//fin de la función main
 
 
-
-      /*Descripción de los parametros:
-       func nombreFuncion (var_recibida1 tipo_var_recibida1,
-                    var_recibida2 tipo_var_recibida2) tipo_dato_devuelto{
-
-                    bloque_de_codigo_a_ejecutar
-                    return (valor a devolver)
-                  }
-      */
-             
+      //Descripción de los parametros:
+      // func nombreFuncion (var_recibida1 tipo_var_recibida1,
+      //              var_recibida2 tipo_var_recibida2) tipo_dato_devuelto
+      //              {bloque_de_codigo_a_ejecutar}
       func suma(a int,b int) int {//Inicio función suma
                return (a+b)
              }//fin función suma
