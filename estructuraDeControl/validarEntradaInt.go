@@ -1,11 +1,11 @@
 /*
-Nombre: entraPorConsolaNumero.go
-Descripción: En produccion
+Nombre: entradaPorConsolaNumero.go
+Descripción: Código que permite la suma de dos números enteros positivos
 Autor: @oswaldom876
 Fecha:15-01-2017
 */
 
-package entraPorConsolaNumero
+package main
 
 //Área para importar librerias
 import "fmt"
@@ -14,16 +14,21 @@ func main() {//Inicio de la función main (bloque de código principal)
         var a int
         var b int
 
-        fmt.Println("Introduce un numero")
+        fmt.Print("Introduce un numero:")
         fmt.Scanln(&a)
-        for  a == 0 {
-          fmt.Scanln(&a)
-          fmt.Println("Error, Ingrese un dato numerico")
+        for  a < 0 {
           //fmt.Scanln(&a)
+          fmt.Print("Error, Ingrese un dato numerico:")
+          fmt.Scanln(&a)
         }
         //fmt.Scanln(&a)
-        fmt.Println("Introduce otro numero")
+        fmt.Print("Introduce otro numero:")
         fmt.Scanln(&b)
+        for  b < 0 {
+          //fmt.Scanln(&a)
+          fmt.Print("Error, Ingrese un dato numerico:")
+          fmt.Scanln(&b)
+        }
 
         //imprime mensaje con formato personalizado
         fmt.Printf("La suma de %d + %d = %d \n", a, b, suma(a,b))
