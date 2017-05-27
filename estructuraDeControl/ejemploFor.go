@@ -18,6 +18,10 @@ func main() { //Inicio de la función main (bloque de código principal)
   for i := 1; i <= 100; i++ {
     if  numero  := i; numero % 2  ==  0 {
       fmt.Printf("%d \n", i)
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7e9a9eb7d7c5cdb218fea7f2780f6d71e8e7627
     }//fin_if
 
   }//fin_for
