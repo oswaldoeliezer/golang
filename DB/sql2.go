@@ -1,9 +1,17 @@
+/*
+Nombre: sql2.go
+Descripción: realiza consulta de todoslos datos cargados 
+en la tabla users  de una BD PgSql 
+Autor: @oswaldom876
+Fecha:13-01-2017
+*/
+
+
 package main
 
 import (
-	"database/sql"
+	"database/sql" 
 	"fmt"
-
 	_ "github.com/lib/pq"
 )
 
